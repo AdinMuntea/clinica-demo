@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Demo | Arta Zâmbetului, Știința Încrederei</title>
+    <meta name="description" content="Clinica Demo - Clinică stomatologică premium pentru implantologie, estetică dentară și ortodonție. Tratamente personalizate în București.">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Clinica Demo",
+      "image": "[URL_IMAGINE_CLINICĂ]",
+      "description": "Clinică stomatologică specializată în tratamente estetice și reconstructive de înaltă performanță.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bulevardul Unirii, Nr. 125, Sector 1",
+        "addressLocality": "București",
+        "addressRegion": "București",
+        "addressCountry": "RO"
+      },
+      "telephone": "+40 722 000 000",
+      "openingHours": "Mo-Fr 09:00-19:00, Sa 09:00-14:00"
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .transition-all { transition: all 0.3s ease; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 300px; }
+        .accordion-item.active .accordion-icon { transform: rotate(180deg); }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+        
+        .sticky-mobile-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #e5e7eb;
+            padding: 12px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .sticky-mobile-bar { display: flex; }
+        }
+        
+        .premium-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-[1001] bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight text-slate-900">
+                NOVA<span class="text-blue-700">DENT</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-9 items-center">
+                <a href="#home" class="hover:text-blue-700 font-medium transition">Acasă</a>
+                <a href="#servicii" class="hover:text-blue-700 font-medium transition">Servicii</a>
+                <a href="#despre-noi" class="hover:text-blue-700 font-medium transition">Despre Noi</a>
+                <a href="#echipa" class="hover:text-blue-700 font-medium transition">Echipa</a>
+                <a href="#contact" class="hover:text-blue-700 font-medium transition">Contact</a>
+                <a href="tel:+40 722 000 000" class="bg-slate-900 text-white px-7 py-2.5 rounded-full hover:bg-blue-800 transition shadow-sm">Programări</a>
+            </div>
+            
+            <button id="menuToggle" class="md:hidden text-3xl">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden bg-white border-b p-6 flex flex-col space-y-4 md:hidden">
+        <a href="#home" class="text-lg font-medium">Acasă</a>
+        <a href="#servicii" class="text-lg font-medium">Servicii</a>
+        <a href="#despre-noi" class="text-lg font-medium">Despre Noi</a>
+        <a href="#echipa" class="text-lg font-medium">Echipa</a>
+        <a href="#contact" class="text-lg font-medium">Contact</a>
+        <a href="tel:+40 722 000 000" class="bg-blue-700 text-white text-center py-3 rounded-lg">Sună acum</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-40 pb-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 animate-fade-in">
+                    <div class="inline-block bg-blue-50 text-blue-700 px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase">
+                        Experiență în Estetică Dentară
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] text-slate-900">
+                        Arta zâmbetului, <br><span class="text-blue-700">știința încrederei</span>.
+                    </h1>
+                    <p class="text-xl text-slate-600 max-w-lg leading-relaxed">
+                        La NovaDent Studio, transformăm vizita la stomatolog într-o experiență de relaxare. Combinăm tehnologia digitală de precizie cu o abordare umană, personalizată pentru fiecare zâmbet.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="#contact" class="bg-blue-700 text-white px-10 py-5 rounded-full font-bold text-center hover:bg-blue-800 transition shadow-xl shadow-blue-900/10">Programăm o consultație</a>
+                        <a href="https://wa.me/+40722000000" class="bg-white border-2 border-slate-200 text-slate-900 px-10 py-5 rounded-full font-bold text-center hover:bg-slate-50 transition shadow-sm">Mesaj WhatsApp</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-blue-100 rounded-[40px] blur-2xl opacity-50"></div>
+                    <img src="sdxl_simple_00003_.png" alt="Interior clinică premium" class="relative rounded-[30px] shadow-2xl w-full object-cover border border-white/50">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
+                        <p class="text-blue-700 font-bold text-xl">12 Ani</p>
+                        <p class="text-sm text-slate-500">Ani de Experiență</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="py-12 bg-slate-50 border-y border-slate-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-12 md:gap-24 text-slate-400 font-semibold uppercase tracking-widest text-sm">
+                <div class="flex items-center gap-2"><span class="text-blue-700">✓</span> Tehnologie Digitală</div>
+                <div class="flex items-center gap-2"><span class="text-blue-700">✓</span> Tratamente Fără Durere</div>
+                <div class="flex items-center gap-2"><span class="text-blue-700">✓</span> Siguranță Maximă</div>
+                <div class="flex items-center gap-2"><span class="text-blue-700">✓</span> Rezultate Naturale</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicii" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-bold mb-4">Specializările Noastre</h2>
+                <div class="w-20 h-1.5 bg-blue-700 mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">Soluții avansate pentru sănătatea orală, executate cu precizie chirurgicală și estetică.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl hover:border-blue-200 transition-all group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">🦷</div>
+                    <h3 class="text-xl font-bold mb-4">Stomatologie Generală</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Curățări, tratamente de canale și igienă dentară profesională pentru o sănătate durabilă.</p>
+                </div>
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl hover:border-blue-200 transition-all group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">🔩</div>
+                    <h3 class="text-xl font-bold mb-4">Implantologie</h3>
+                    <p class="text-slate-600 text-sm">Înlocuiri durabile pentru dinții pierduți, folosind implanturi de înaltă calitate.</p>
+                </div>
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl hover:border-blue-200 transition-all group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">✨</div>
+                    <h3 class="text-xl font-bold mb-4">Estetica Dentară</h3>
+                    <p class="text-slate-600 text-sm">Alimentare estetică, veneeri ceramice și tratamente de albire dentară.</p>
+                </div>
+                <div class="p-10 rounded-3xl border border-slate-100 bg-slate-50 hover:shadow-2xl hover:border-blue-200 transition-all group">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform">📏</div>
+                    <h3 class="text-xl font-bold mb-4">Ortodonție</h3>
+                    <p class="text-slate-600 text-sm">Corecții dentare pentru toate vârste, folosind aparate moderne și discrete.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="despre-noi" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://placehold.co/600x450?text=Echipa+NovaDent" alt="Echipa NovaDent" class="rounded-[30px] shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl hidden md:block">
+                        <p class="text-blue-700 font-bold text-xl">Expertiză Premium</p>
+                        <p class="text-slate-500">Tratamente personalizate</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-4xl font-bold leading-tight">O Experiență Diferită <br> pentru Zâmbetul Tău</h2>
+                    <p class="text-lg text-slate-600">
+                        La NovaDent Studio, nu privim doar dinți; privim oameni. Înțelegem că o vizită la stomatolog poate fi o sursă de stres, de aceea am creat un spațiu în care relaxarea este prioritare.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Echipa noastră este formată din medici cu ani de experiență, dedicați cercetării constante. Folosim tehnologie digitală pentru a oferi planuri de tratament precise, reducând timpul de așteptare și maximizând confortul.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 font-medium"><span class="text-blue-700">✓</span> Tehnologie Digitală Non-Invazivă</li>
+                        <li class="flex items-center gap-3 font-medium"><span class="text-blue-700">✓</span> Tratamente personalizate</li>
+                        <li class="flex items-center gap-3 font-medium"><span class="text-blue-700">✓</span> Siguranță și igienă maximă</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="echipa" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Echipa Noastră</h2>
+                <p class="text-slate-600">Profesioniști dedicați excelenței</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-12">
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100">
+                    <img src="https://placehold.co/200x200?text=Medic" class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-white shadow-md">
+                    <h3 class="text-xl font-bold">Dr. Andrei Ionescu</h3>
+                    <p class="text-blue-700 font-medium">Implantologie și Chirurgie Orală</p>
+                    <p class="text-sm text-slate-500">Medic Stomatolog</p>
+                </div>
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100">
+                    <img src="https://placehold.co/200x200?text=Medic" class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-white shadow-md">
+                    <h3 class="text-xl font-bold">Dr. Elena Popescu</h3>
+                    <p class="text-blue-700 font-medium">Estetică Dentară și Veneeri</p>
+                    <p class="text-sm text-slate-500">Medic Stomatolog</p>
+                </div>
+                <div class="text-center space-y-4 p-8 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-xl transition-all border border-transparent hover:border-slate-100">
+                    <img src="https://placehold.co/200x200?text=Medic" class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-white shadow-md">
+                    <h3 class="text-xl font-bold">Dr. Victor Dumitrescu</h3>
+                    <p class="text-blue-700 font-medium">Ortodonție și Stomatologie Generală</p>
+                    <p class="text-sm text-slate-500">Medic Stomatolog</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Recenzii Pacienți</h2>
+                <p class="text-slate-600">Experiența celor care au ales NovaDent Studio</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-200">
+                    <div class="text-yellow-500 mb-4 text-xl">★★★★★</div>
+                    <p class="text-slate-600 italic">"Atmosfera este minunată. Nu am simțit nicio durere la implantare, echipa este foarte profesionistă."</p>
+                    <p class="mt-6 font-bold text-slate-900">- Ana M.</p>
+                    <p class="text-xs text-slate-400 mt-2">[Recenzie Google]</p>
+                </div>
+                <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-200">
+                    <div class="text-yellow-500 mb-4 text-xl">★★★★★</div>
+                    <p class="text-slate-600 italic">"Cel mai bun tratament de estetică dentară în zonă. Rezultatul este perfect, foarte natural."</p>
+                    <p class="mt-6 font-bold text-slate-900">- Bogdan D.</p>
+                    <p class="text-xs text-slate-400 mt-2">[Recenzie Google]</p>
+                </div>
+                <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-200">
+                    <div class="text-yellow-500 mb-4 text-xl">★★★★★</div>
+                    <p class="text-slate-600 italic">"Am fost foarte îngrijorată de ortodonție, dar echipa a fost extrem de răbdătoare și grijlincă."</p>
+                    <p class="mt-6 font-bold text-slate-900">- Maria S.</p>
+                    <p class="text-xs text-slate-400 mt-2">[Recenzie Google]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Întrebări Frecvente</h2>
+                <p class="text-slate-600">Răspunsuri la întrebările celor mai frecvente</p>
+            </div>
+            <div class="space-y-4">
+                <div class="accordion-item border border-slate-200 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer font-bold text-lg">
+                        <span>Doare tratamentul stomatologic?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content text-slate-600">
+                        <p class="pt-4">Folosim tehnologii moderne de anestezie locală și sedare, în funcție de necesități, pentru a asigura un confort maxim. Majoritatea procedurilor moderne sunt executate fără durere.</p>
+                    </div>
+                </div>
+                <div class="accordion-item border border-slate-200 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer font-bold text-lg">
+                        <span>Cât durează o consultație inițială?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content text-slate-600">
+                        <p class="pt-4">O consultație inițială durează în medie 30-45 minute, în care realizăm un examen clinic complet, analizează istoricul medical și discutăm planul de tratament.</p>
+                    </div>
+                </div>
+                <div class="accordion-item border border-slate-200 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer font-bold text-lg">
+                        <span>Cum pot face o programare?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content text-slate-600">
+                        <p class="pt-4">Puteți programa o vizită rapid prin telefon la +40 722 000 000, prin WhatsApp sau completând formularul din partea inferioară a site-ului.</p>
+                    </div>
+                </div>
+                <div class="accordion-item border border-slate-200 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer font-bold text-lg">
+                        <span>Care sunt orele de funcționare?</span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content text-slate-600">
+                        <p class="pt-4">Suntem deschiși de Luni până Vineri, între orele 09:00 și 19:00, iar în zilele de Sâmbătă între orele 09:00 și 14:00.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold">Contactează-ne</h2>
+                    <p class="text-lg text-slate-600">Sunteți gata să vă redați zâmbetul? Contactați-ne astăzi pentru o consultație personalizată.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-6">
+                            <div class="bg-blue-100 p-4 rounded-2xl text-blue-700 text-xl">📍</div>
+                            <div>
+                                <h4 class="font-bold">Adresă</h4>
+                                <p class="text-slate-600">Bulevardul Unirii, Nr. 125, Sector 1, București</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="bg-blue-100 p-4 rounded-2xl text-blue-700 text-xl">📞</div>
+                            <div>
+                                <h4 class="font-bold">Telefon</h4>
+                                <p class="text-slate-600">+40 722 000 000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <div class="bg-blue-100 p-4 rounded-2xl text-blue-700 text-xl">✉️</div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-slate-600">info@novadent.ro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-8">
+                        <h4 class="font-bold mb-4">Programul nostru:</h4>
+                        <div class="grid grid-cols-2 gap-4 text-sm text-slate-600">
+                            <p>Luni - Vineri: 09:00 - 19:00</p>
+                            <p>Sâmbătă: 09:00 - 14:00</p>
+                            <p>Duminică: Închis</p>
+                            <p>Publică: Închis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-[40px] shadow-2xl border border-slate-100">
+                    <form id="bookingForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Nume Complet</label>
+                            <input type="text" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all" placeholder="Ion Popescu">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Telefon</label>
+                                <input type="tel" required class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all" placeholder="+40...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Serviciu</label>
+                                <select class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                                    <option>Stomatologie Generală</option>
+                                    <option>Implantologie</option>
+                                    <option>Estetica Dentară</option>
+                                    <option>Ortodonție</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Mesaj</label>
+                            <textarea class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none" rows="4" placeholder="Cum vă putem ajuta?"></textarea>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="gdpr" required class-="w-4 h-4">
+                            <label for="gdpr" class="text-xs text-slate-500">Sunt de acord cu politica de confidențialitate.</label>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-700 text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-800 transition shadow-lg">Trimite Solicitarea</button>
+                    </form>
+                    <div id="formSuccess" class="hidden text-center p-6 bg-green-50 text-green-700 rounded-2xl border border-green-200 mt-4">
+                        Solicitarea a fost trimisă! Vă vom contacta rapid.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-white font-bold text-2xl mb-4">NovaDent Studio</h4>
+                    <p class="max-w-md">Tratamente dentare de înaltă performanță, executate cu expertiză și înțelepiciune. Promit să vă ofer un zâmbet care să văInspire încrederea.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Link-uri Rapide</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white">Acasă</a></li>
+                        <li><a href="#servicii" class="hover:text-white">Servicii</a></li>
+                        <li><a href="#echipa" class="hover:text-white">Echipa</a></li>
+                        <li><a href="#contact" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Contact</h4>
+                    <p>Bulevardul Unirii, Nr. 125, București</p>
+                    <p>+40 722 000 000</p>
+                    <p>info@novadent.ro</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-sm">
+                <p>&copy; 2026 NovaDent Studio. Toate drepturile rezervate. <a href="#" class="underline hover:text-white">Politica de confidențialitate</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        const bookingForm = document.getElementById('bookingForm');
+        if(bookingForm) {
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                bookingForm.classList.add('hidden');
+                document.getElementById('formSuccess').classList.remove('hidden');
+                const name = bookingForm.querySelectorAll('input')[0].value;
+                window.location.href = `mailto:info@novadent.ro?subject=Programare Noua: ${name}&body=Vă solicit o programare.`;
+            });
+        }
+    </script>
+</body>
+</html>
