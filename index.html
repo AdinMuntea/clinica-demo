@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinica Demo | Arta Zâmbetului, Știința Încrederei</title>
-    <meta name="description" content="Clinica Demo - Clinică stomatologică premium pentru implantologie, estetică dentară și ortodonție. Tratamente personalizate în București.">
+    <title>NovaDent Studio Premium | Arta Zâmbetului, Știința Încrederei</title>
+    <meta name="description" content="NovaDent Studio - Clinică stomatologică premium pentru implantologie, estetică dentară și ortodonție. Tratamente personalizate în București.">
     
     <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Dentist",
-      "name": "Clinica Demo",
+      "name": "NovaDent Studio Premium",
       "image": "[URL_IMAGINE_CLINICĂ]",
       "description": "Clinică stomatologică specializată în tratamente estetice și reconstructive de înaltă performanță.",
       "address": {
@@ -61,7 +61,7 @@
         }
         
         .premium-shadow {
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -108,7 +108,7 @@
                     <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] text-slate-900">
                         Arta zâmbetului, <br><span class="text-blue-700">știința încrederei</span>.
                     </h1>
-                    <p class="text-xl text-slate-600 max-w-lg leading-relaxed">
+                    <p class="text-lg text-slate-600 max-w-lg leading-relaxed">
                         La NovaDent Studio, transformăm vizita la stomatolog într-o experiență de relaxare. Combinăm tehnologia digitală de precizie cu o abordare umană, personalizată pentru fiecare zâmbet.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-5">
@@ -117,12 +117,15 @@
                     </div>
                 </div>
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-blue-100 rounded-[40px] blur-2xl opacity-50"></div>
-                    <img src="sdxl_simple_00003_.png" alt="Interior clinică premium" class="relative rounded-[30px] shadow-2xl w-full object-cover border border-white/50">
-                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden md:block">
-                        <p class="text-blue-700 font-bold text-xl">12 Ani</p>
-                        <p class="text-sm text-slate-500">Ani de Experiență</p>
+                    <!-- Badge placed safely above the image -->
+                    <div class="absolute -top-8 left-0 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-fade-in">
+                        <div class="bg-blue-700 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg">12</div>
+                        <div>
+                            <p class="font-bold text-slate-900 leading-none">Ani de</p>
+                            <p class="text-xs text-slate-500">Experiență</p>
+                        </div>
                     </div>
+                    <img src="sdxl_simple_00003_.png" alt="Interior clinică premium" class="rounded-[30px] shadow-2xl w-full object-cover border border-white">
                 </div>
             </div>
         </div>
@@ -376,7 +379,7 @@
                             <textarea class="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-blue-600 outline-none" rows="4" placeholder="Cum vă putem ajuta?"></textarea>
                         </div>
                         <div class="flex items-center gap-2">
-                            <input type="checkbox" id="gdpr" required class-="w-4 h-4">
+                            <input type="checkbox" id="gdpr" required class="w-4 h-4">
                             <label for="gdpr" class="text-xs text-slate-500">Sunt de acord cu politica de confidențialitate.</label>
                         </div>
                         <button type="submit" class="w-full bg-blue-700 text-white py-5 rounded-2xl font-bold text-lg hover:bg-blue-800 transition shadow-lg">Trimite Solicitarea</button>
@@ -445,3 +448,4 @@
     </script>
 </body>
 </html>
+
